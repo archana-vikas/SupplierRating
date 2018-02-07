@@ -46,9 +46,11 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Models\Supplier.cs" />
+    <Compile Include="Models\User.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="SupplierDapperDAO.cs" />
+    <Compile Include="UserDapperDAO.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

@@ -7,3 +7,12 @@ C:\Users\Archana\Documents\Visual Studio 2017\Projects\SupplierAndUserWebAPI\Dat
 C:\Users\Archana\Documents\Visual Studio 2017\Projects\SupplierAndUserWebAPI\DataAccessLayer\obj\Debug\DataAccessLayer.csproj.CoreCompileInputs.cache
 C:\Users\Archana\Documents\Visual Studio 2017\Projects\SupplierAndUserWebAPI\DataAccessLayer\obj\Debug\DataAccessLayer.exe
 C:\Users\Archana\Documents\Visual Studio 2017\Projects\SupplierAndUserWebAPI\DataAccessLayer\obj\Debug\DataAccessLayer.pdb
+C:\Users\Archana\Documents\Supplier Rating Github\DataAccessLayer\bin\Debug\DataAccessLayer.exe.config
+C:\Users\Archana\Documents\Supplier Rating Github\DataAccessLayer\bin\Debug\DataAccessLayer.exe
+C:\Users\Archana\Documents\Supplier Rating Github\DataAccessLayer\bin\Debug\DataAccessLayer.pdb
+C:\Users\Archana\Documents\Supplier Rating Github\DataAccessLayer\bin\Debug\Dapper.dll
+C:\Users\Archana\Documents\Supplier Rating Github\DataAccessLayer\bin\Debug\Dapper.xml
+C:\Users\Archana\Documents\Supplier Rating Github\DataAccessLayer\obj\Debug\DataAccessLayer.csprojResolveAssemblyReference.cache
+C:\Users\Archana\Documents\Supplier Rating Github\DataAccessLayer\obj\Debug\DataAccessLayer.csproj.CoreCompileInputs.cache
+C:\Users\Archana\Documents\Supplier Rating Github\DataAccessLayer\obj\Debug\DataAccessLayer.exe
+C:\Users\Archana\Documents\Supplier Rating Github\DataAccessLayer\obj\Debug\DataAccessLayer.pdb

@@ -26,7 +26,7 @@ namespace SupplierAndUserWebAPI.Controllers
         }
 
         //Method to add supplier//
-        [HttpPost]
+        [HttpPut]
         public IHttpActionResult AddSupplier(Supplier AddSupplier)
         {
             var result = objSupplier.AddSupplierDAO(AddSupplier);
@@ -34,7 +34,7 @@ namespace SupplierAndUserWebAPI.Controllers
         } 
 
         //Update(Edit) Supplier//
-        [HttpPut]
+        [HttpPost]
         public IHttpActionResult EditSupplier(Supplier supplierObj)
         {
             var result = objSupplier.EditSupplier(supplierObj);

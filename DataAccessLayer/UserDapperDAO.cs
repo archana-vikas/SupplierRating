@@ -9,60 +9,57 @@ using System.Data.SqlClient;
 
 namespace DataAccessLayer
 {
-    public class SupplierDapperDAO
+    public class UserDapperDAO
     {
-        
         //Connection string to establish connection with sql server//
         string connectionString = "Data source=LAPTOP-KTJ0MN8C\\SQLEXPRESS; Initial Catalog=SupplierAndUserDB; Integrated Security=SSPI";
         //Method to get list of Suppliers//
-        public List<Supplier> GetAllSuppliersDAO()
+        public List<User> GetAllUsersDAO()
         {
-                       
             using (SqlConnection conn = new SqlConnection(connectionString))
             {
                 conn.Open();
-                //To have list of all the suppliers//
-                var result = conn.Query<Supplier>("Select * from Supplier");
+                //To have list of all the Users//
+                var result = conn.Query<User>("Select * from Users");
                 return result.ToList();
-                
+
             }
-                                
+
         }
-        //To get Supplier by id//
-        public Supplier GetSupplierById(int id)
+        //To get User by id//
+        public User GetUserById(int id)
         {
             using (SqlConnection conn = new SqlConnection(connectionString))
             {
                 conn.Open();
-                var result = conn.Query<Supplier>("Select SupplierId,SupplierName,Service from Supplier where SupplierId=@SupplierId", new { SupplierId = id }).SingleOrDefault();
+                var result = conn.Query<User>("Select UserId,UserName,Role,Email,CreatedOn,Status from Users where UserId=@UserId", new { UserId = id }).SingleOrDefault();
                 return result;
             }
         }
 
-        //Method to add Supplier in the List//
-        public Supplier AddSupplierDAO(Supplier addSupplierObj)
+        //Method to add User in the List//
+        public User AddUserDAO(User addUserObj)
         {
             using (SqlConnection conn = new SqlConnection(connectionString))
             {
                 conn.Open();
-                var query=@"insert into Supplier(SupplierName,Service) values(@SupplierName, @Service);
+                var query = @"insert into Users(UserName,Role,Email,CreatedOn,Status) values(@UserName, @Role,@Email,@CreatedOn,@Status);
                             select cast(scope_identity() as int);";
-                //var result=conn.Execute(query, new { addSupplierObj.SupplierName, addSupplierObj.Service, });
-                var result = conn.Query<int>(query, new { addSupplierObj.SupplierName, addSupplierObj.Service }).Single();
-                addSupplierObj.SupplierId = result;
-                return addSupplierObj;
+                var result = conn.Query<int>(query, new { addUserObj.UserName, addUserObj.Role, addUserObj.Email, addUserObj.CreatedOn, addUserObj.Status }).Single();
+                addUserObj.UserId = result;
+                return addUserObj;
             }
 
         }
 
         //Update(Edit) Supplier//
-        public bool EditSupplier(Supplier supplierEditObj)
+        public bool EditUser(User userEditObj)
         {
             using (SqlConnection conn = new SqlConnection(connectionString))
             {
                 conn.Open();
-                var result = conn.Execute("update Supplier set SupplierName=@SupplierName, service=@Service where SupplierId=" + supplierEditObj.SupplierId, supplierEditObj);
-                if(result>0)
+                var result = conn.Execute("update Users set UserName=@UserName,Role=@Role,Email=@Email,CreatedOn=@CreatedOn,Status=@Status where UserId=" + userEditObj.UserId,userEditObj);
+                if (result > 0)
                 {
                     return true;
                 }
@@ -71,13 +68,13 @@ namespace DataAccessLayer
         }
 
         //Deleting the record//
-        public bool DeleteSupplier(int id)
+        public bool DeleteUser(int id)
         {
             using (SqlConnection conn = new SqlConnection(connectionString))
             {
                 conn.Open();
-                var result = conn.Execute("delete from Supplier where SupplierId=@SupplierId", new { supplierId = id });
-                if(result>0)
+                var result = conn.Execute("delete from Users where UserId=@UserId", new { UserId = id });
+                if (result > 0)
                 {
                     return true;
                 }
