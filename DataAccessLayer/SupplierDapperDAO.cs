@@ -22,7 +22,7 @@ namespace DataAccessLayer
             {
                 conn.Open();
                 //To have list of all the suppliers//
-                var result = conn.Query<Supplier>("Select * from Supplier");
+                var result = conn.Query<Supplier>("Select * from Supplier ORDER BY SupplierId");
                 return result.ToList();
                 
             }
