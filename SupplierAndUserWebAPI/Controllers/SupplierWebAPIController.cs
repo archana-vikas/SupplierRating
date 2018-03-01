@@ -15,6 +15,7 @@ namespace SupplierAndUserWebAPI.Controllers
             var result = objSupplier.GetAllSuppliersDAO();
             return Ok(result);
         }
+        
 
         //Method to get Supplier by Id//
         [HttpGet]

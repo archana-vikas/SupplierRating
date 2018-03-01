@@ -20,7 +20,7 @@ namespace DataAccessLayer
             {
                 conn.Open();
                 //To have list of all the Users//
-                var result = conn.Query<User>("Select * from Users");
+                var result = conn.Query<User>("Select * from Users order by UserId");
                 return result.ToList();
 
             }

@@ -6,9 +6,11 @@ using System.Net.Http;
 using System.Web.Http;
 using DataAccessLayer;
 using DataAccessLayer.Models;
+using System.Web.Http.Cors;
 
 namespace SupplierAndUserWebAPI.Controllers
 {
+    [EnableCors(origins: "*", headers: "*", methods: "*")]
     public class UserController : ApiController
     {
         UserDapperDAO objUser = new UserDapperDAO();
@@ -30,7 +32,7 @@ namespace SupplierAndUserWebAPI.Controllers
         }
 
         //Method to add supplier//
-        [HttpPost]
+        [HttpPut]
         public IHttpActionResult AddUser(User addUser)
         {
             var result = objUser.AddUserDAO(addUser);
@@ -38,7 +40,7 @@ namespace SupplierAndUserWebAPI.Controllers
         }
 
         //Update(Edit) User//
-        [HttpPut]
+        [HttpPost]
         public IHttpActionResult EditUser(User editUser)
         {
             var result = objUser.EditUser(editUser);

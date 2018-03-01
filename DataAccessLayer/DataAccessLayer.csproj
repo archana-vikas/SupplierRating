@@ -45,6 +45,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="CategoryDapperDAO.cs" />
+    <Compile Include="Models\Category.cs" />
+    <Compile Include="Models\Rating.cs" />
     <Compile Include="Models\Supplier.cs" />
     <Compile Include="Models\User.cs" />
     <Compile Include="Program.cs" />

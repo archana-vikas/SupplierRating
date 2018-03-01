@@ -28,6 +28,16 @@ namespace DataAccessLayer
             }
                                 
         }
+        //Method to get List of suppliers name//
+        public List<Supplier> GetSupplierNames()
+        {
+            using (SqlConnection conn = new SqlConnection(connectionString))
+            {
+                conn.Open();
+                var result = conn.Query<Supplier>("Select SupplierName from Supplier");
+                return result.ToList();
+            }
+        }
         //To get Supplier by id//
         public Supplier GetSupplierById(int id)
         {
